@@ -12,6 +12,10 @@ coverage = "*"
 
 [packages]
 flask = "*"
+alembic = "*"
+flask-sqlalchemy = "*"
+python-dotenv = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
