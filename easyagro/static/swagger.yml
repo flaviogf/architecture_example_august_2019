@@ -10,7 +10,7 @@ servers:
       description: Development
 
 paths:
-    /api/v1/budget:
+    /api/v1/budgets:
         post:
             operationId: store
             tags:
@@ -37,6 +37,8 @@ components:
                 name:
                     type: string
                 email:
+                    type: string
+                phone:
                     type: string
                 items:
                     type: array

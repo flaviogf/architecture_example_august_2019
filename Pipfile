@@ -16,6 +16,8 @@ alembic = "*"
 flask-sqlalchemy = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+marshmallow = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

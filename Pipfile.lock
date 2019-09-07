@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0bfb944dce09dc13746b1424085a9489a82034a1787a81d42ee1d1ccb351e3ec"
+            "sha256": "91e56fefd175a14037c099a09c2196d5d61416587c3f1c8d2e67c43932c4d0e0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -45,6 +45,14 @@
             ],
             "index": "pypi",
             "version": "==2.4.0"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471",
+                "sha256:fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"
+            ],
+            "index": "pypi",
+            "version": "==19.9.0"
         },
         "itsdangerous": {
             "hashes": [
@@ -98,6 +106,14 @@
                 "sha256:e249096428b3ae81b08327a63a485ad0878de3fb939049038579ac0ef61e17e7"
             ],
             "version": "==1.1.1"
+        },
+        "marshmallow": {
+            "hashes": [
+                "sha256:159c3ed37094d66867bbacdf2e7effd7c7ad88c6b11f9b398ff5ea1d118508c3",
+                "sha256:51188df086da5c427c3c193faddf7f95857ee4053dbf2d083e5cbfd846b2fb29"
+            ],
+            "index": "pypi",
+            "version": "==3.0.3"
         },
         "psycopg2-binary": {
             "hashes": [

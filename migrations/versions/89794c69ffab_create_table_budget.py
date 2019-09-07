@@ -26,6 +26,9 @@ def upgrade():
                     sa.Column('email',
                               sa.String(250),
                               nullable=False),
+                    sa.Column('phone',
+                              sa.String(250),
+                              nullable=False),
                     sa.Column('total',
                               sa.Float,
                               nullable=False))

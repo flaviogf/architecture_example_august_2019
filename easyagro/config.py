@@ -11,9 +11,9 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-class Production:
+class Production(Config):
     pass
 
 
-class Testing:
+class Testing(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'

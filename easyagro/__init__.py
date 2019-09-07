@@ -6,8 +6,13 @@ def create_app(config='easyagro.config.Config'):
 
     app.config.from_object(config)
 
-    from easyagro.extensions import db
+    from easyagro.extensions import db, mail, sms
     db.init_app(app)
+    mail.init_app(app)
+    sms.init_app(app)
+
+    from easyagro import budgets
+    app.register_blueprint(budgets.views.blueprint)
 
     @app.route('/')
     @app.route('/swagger')

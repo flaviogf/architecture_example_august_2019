@@ -11,6 +11,8 @@ class Budget(db.Model):
                   nullable=False)
     email = Column(String(250),
                    nullable=False)
+    phone = Column(String(250),
+                   nullable=False)
     total = Column(Float,
                    nullable=False)
     items = relationship('BudgetItem')
@@ -31,7 +33,7 @@ class BudgetItem(db.Model):
                         ForeignKey('budget.uid'))
 
 
-class DeliveryType:
+class DeliveryType(db.Model):
     name = Column(String(250),
                   primary_key=True)
     value = Column(Float,
