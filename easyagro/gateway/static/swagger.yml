@@ -1,0 +1,59 @@
+openapi: 3.0.0
+
+info:
+  title: EasyAgro - Budget.
+  description: EasyAgro - Budget.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Development
+
+paths:
+  /api/v1/budgets:
+    post:
+      operationId: store
+      tags:
+        - budget
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StoreBudget"
+      responses:
+        "201":
+          description: Created.
+        "400":
+          description: Bad request.
+        "500":
+          description: Internal server error.
+
+components:
+  schemas:
+    StoreBudget:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              quantity:
+                type: integer
+              price:
+                type: number
+        delivery:
+          type: string
+          enum:
+            - normal
+            - fast
+            - withdrawal

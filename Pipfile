@@ -11,6 +11,9 @@ pytest = "*"
 coverage = "*"
 
 [packages]
+flask = "*"
+gunicorn = "*"
+marshmallow = "*"
 
 [requires]
 python_version = "3.7"

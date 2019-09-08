@@ -29,7 +29,7 @@ class Delivery:
         self._value = value
 
     @staticmethod
-    def new(delivery='default'):
+    def new(delivery='withdrawal'):
         return DELIVERY_TYPES[delivery]
 
     @property
@@ -59,5 +59,5 @@ class Withdrawal(Delivery):
 DELIVERY_TYPES = {
     'normal': NormalDelivery(),
     'fast': FastDelivery(),
-    'default': Withdrawal()
+    'withdrawal': Withdrawal()
 }
