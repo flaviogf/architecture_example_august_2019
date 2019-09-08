@@ -6,7 +6,7 @@ from easyagro.models import Budget, Delivery
 class TestStore:
     @pytest.fixture(autouse=True)
     def normal_delivery(self, db):
-        normal = Delivery(uid='xpto', name='normal', value=50)
+        normal = Delivery(uid='xpto', name='normal', value=1000)
         db.session.add(normal)
         db.session.commit()
         return normal
@@ -53,8 +53,8 @@ class TestStore:
         assert 'flash@dc.com' == budget.email
         assert 2500 == budget.subtotal
         assert 'normal' == budget.delivery_name
-        assert 50 == budget.delivery_value
-        assert 2550 == budget.total
+        assert 1000 == budget.delivery_value
+        assert 3500 == budget.total
 
         budget_item = budget.items[0]
         assert 1 == len(budget.items)
