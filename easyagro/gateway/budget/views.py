@@ -5,11 +5,13 @@ from easyagro.gateway.budget.database import SqlAlchemyBudgetDatabaseGateway
 from easyagro.gateway.budget.notification import (
     SendGridEmailNotificationGateway, SendGridSmsNotificationGateway)
 from easyagro.gateway.budget.schemas import store_budget
+from easyagro.gateway.decorators import transational
 
 blueprint = Blueprint('budget', __name__)
 
 
 @blueprint.route('/api/v1/budgets', methods=['POST'])
+@transational()
 def store():
     errors = store_budget.validate(request.json)
 

@@ -14,6 +14,10 @@ coverage = "*"
 flask = "*"
 gunicorn = "*"
 marshmallow = "*"
+python-dotenv = "*"
+flask-sqlalchemy = "*"
+psycopg2-binary = "*"
+alembic = "*"
 
 [requires]
 python_version = "3.7"
