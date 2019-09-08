@@ -1,12 +1,12 @@
 import pytest
 
-from easyagro.models import Budget, DeliveryType
+from easyagro.models import Budget, Delivery
 
 
 class TestStore:
     @pytest.fixture(autouse=True)
     def normal_delivery(self, db):
-        normal = DeliveryType(name='normal', value=50)
+        normal = Delivery(uid='xpto', name='normal', value=50)
         db.session.add(normal)
         db.session.commit()
         return normal
@@ -23,7 +23,7 @@ class TestStore:
                     "price": 500
                 }
             ],
-            "delivery_type": "normal"
+            "delivery": "normal"
         }
 
         response = client.post('/api/v1/budgets', json=data)
@@ -42,7 +42,7 @@ class TestStore:
                     "price": 500
                 }
             ],
-            "delivery_type": "normal"
+            "delivery": "normal"
         }
 
         client.post('/api/v1/budgets', json=data)
@@ -51,6 +51,9 @@ class TestStore:
         assert 1 == Budget.query.count()
         assert 'Barry' == budget.name
         assert 'flash@dc.com' == budget.email
+        assert 2500 == budget.subtotal
+        assert 'normal' == budget.delivery_name
+        assert 50 == budget.delivery_value
         assert 2550 == budget.total
 
         budget_item = budget.items[0]
@@ -72,7 +75,7 @@ class TestStore:
                     "price": 500
                 }
             ],
-            "delivery_type": "normal"
+            "delivery": "normal"
         }
 
         response = client.post('/api/v1/budgets', json=data)

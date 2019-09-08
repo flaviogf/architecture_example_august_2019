@@ -13,6 +13,12 @@ class Budget(db.Model):
                    nullable=False)
     phone = Column(String(250),
                    nullable=False)
+    subtotal = Column(Float,
+                      nullable=False)
+    delivery_name = Column(String(250),
+                           nullable=False)
+    delivery_value = Column(Float,
+                            nullable=False)
     total = Column(Float,
                    nullable=False)
     items = relationship('BudgetItem')
@@ -33,7 +39,9 @@ class BudgetItem(db.Model):
                         ForeignKey('budget.uid'))
 
 
-class DeliveryType(db.Model):
+class Delivery(db.Model):
+    uid = Column(String(36),
+                 primary_key=True)
     name = Column(String(250),
                   primary_key=True)
     value = Column(Float,
