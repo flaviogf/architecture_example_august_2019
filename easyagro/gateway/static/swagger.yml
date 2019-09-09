@@ -8,6 +8,8 @@ info:
 servers:
   - url: http://localhost:5000
     description: Development
+  - url: https://architecture.august2019.flaviogf.com.br
+    description: Production
 
 paths:
   /api/v1/budgets:
