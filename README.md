@@ -1,11 +1,13 @@
-# Architecture Proposal August 2019.
+# Architecture Example August 2019.
 
-Architecture Proposal August 2019.
+Architecture Example August 2019.
 
 ## Tools
+- Alembic
 - Flask
 - Flask-SQLAlchemy
-- alembic
+- Marshmallow
+- SQLAlchemy
 - SwaggerUI
 
 ## How to use
